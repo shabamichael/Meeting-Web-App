@@ -13,7 +13,7 @@ import java.util.Properties;
 
 import java.util.logging.*;
 
-import com.tech.mobile.innovative.Users;
+
 
 
 
@@ -28,7 +28,7 @@ public class dbConnection {
 	private static String dbname;
 	private static String separator;
 	
-	Users user = new Users();
+	
 	Connection connection = null;
 
 	
@@ -107,33 +107,9 @@ public class dbConnection {
 		}
 	}
 	
-	public void Insert() {
-		
-		long id = user.getSubscriberId();
-		String name = user.getFirstName();
-		String surname = user.getLastName();
-		String email = user.getEmail();
-		
-		
-		String query = "INSERT INTO idorenyin_hair (subscribersId,name,surname,email) "
-				+ "VALUES(?,?,?,?)";
-		try {
-		PreparedStatement ps 
-		= connection.prepareStatement(query);
-		ps.setLong(1, id);
-		ps.setString(2, name);
-		ps.setString(3, surname);
-		ps.setString(4, email);
-		ps.executeUpdate();
-		
-			System.out.println("New data have been saved successful...");
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 		
 	}
 
 
-}
+
